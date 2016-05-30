@@ -37,5 +37,14 @@ particlesJS("particles-js", {"particles":{"number":{"value":52,"density":{"enabl
   })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-71756042-2', 'auto');
   ga('send', 'pageview');
+
+  var linksContainer = document.getElementsByClassName('links')[0];
+  var links = linksContainer.getElementsByTagName('a');
+  for(var i = 0; i < links.length; i++) {
+    var link = links[i];
+    link.onclick = function() {
+      ga('send', 'event', 'link', 'click', this.href);
+    }
+  }
 </script>
 </html>
